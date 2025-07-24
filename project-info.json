@@ -1,3 +1,16 @@
 {
-  "tech": ["ASM", "EMU8086", "x86"]
+  "tech": [".8086", "ASM", "x86"],
+  "features": [
+    "Modo multijugador",
+    "Interfaz en consola",
+    "Algoritmos optimizados para x86"
+  ],
+  "stack": {
+    "language": "Ensamblador",
+    "framework": "EMU8086",
+    "tools": ["GCC", "Makefile"]
+  },
+  "screenshots": [
+    "https://raw.githubusercontent.com/Geovanni-Gonzalez/TicTacToe-x86-ASM/main/screenshots/1.png"
+  ]
 }
