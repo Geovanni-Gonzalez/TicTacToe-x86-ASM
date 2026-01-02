@@ -1,21 +1,36 @@
 {
-  "tech": [".8086", "ASM", "x86"],
+  "tech": [
+    ".8086",
+    "ASM",
+    "x86"
+  ],
   "features": [
-    "Modo multijugador",
-    "Interfaz en consola",
-    "Algoritmos optimizados para x86"
+    "Modo multijugador local",
+    "Interfaz gráfica en consola (ASCII)",
+    "Validación de movimientos",
+    "Detección de victoria y empate",
+    "Reiniciar partida"
   ],
   "stack": {
-    "language": "Ensamblador",
+    "language": "Ensamblador x86",
     "framework": "EMU8086",
-    "tools": ["GCC", "Makefile"]
+    "tools": [
+      "EMU8086 Integrated Assembler"
+    ]
   },
   "screenshots": [
     "https://raw.githubusercontent.com/Geovanni-Gonzalez/TicTacToe-x86-ASM/main/screenshots/1principalImage.jpg"
   ],
-
   "description": {
-    "es": "Juego del Gato (Tres en línea) implementado en lenguaje ensamblador x86 utilizando el entorno EMU8086. Permite a dos jugadores competir por turnos, con una interfaz por consola y detección automática de victorias o empates.",
-    "en": "Tic Tac Toe game implemented in x86 assembly language using the EMU8086 environment. It allows two players to compete in turns, featuring a console interface and automatic detection of wins or draws."
-  }
+    "es": "Juego del Gato (Tres en línea) implementado en lenguaje ensamblador x86 para 16-bit. Cuenta con modo para dos jugadores, validación de reglas y detección de ganadores.",
+    "en": "Tic Tac Toe game implemented in x86 assembly language for 16-bit architecture. Features two-player local mode, rule validation, and win/draw detection."
+  },
+  "keywords": [
+    "assembly",
+    "x86",
+    "game-development",
+    "tictactoe",
+    "low-level-programming",
+    "emu8086"
+  ]
 }
