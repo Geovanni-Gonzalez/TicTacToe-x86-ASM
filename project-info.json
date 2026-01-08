@@ -1,31 +1,54 @@
 {
-  "project": "TicTacToe x86 ASM",
-  "tech": [
-    "x86 Assembly (16-bit)",
-    ".8086 Instruction Set",
-    "EMU8086"
-  ],
-  "features": [
-    "Local 2-Player Multiplayer Mode",
-    "ASCII-styled Console Interface",
-    "Strict Move Validation Rules",
-    "Win/Draw Detection Algorithms",
-    "Game Reset and State Re-initialization"
-  ],
-  "stack": {
-    "language": "x86 Assembler",
-    "framework": "EMU8086 Emulator",
-    "tools": [
-      "EMU8086 Internal Assembler",
-      "Git"
+  "en": {
+    "tech": [
+      "x86 Assembly (16-bit)",
+      "8086 Instructions",
+      "Register Manipulation",
+      "Interrupts (INT 21h)"
     ],
-    "database": "Memory Segment (Direct Access)"
+    "features": [
+      "Local 2-player competitive multiplayer mode",
+      "Optimized ASCII-styled console interface",
+      "Low-level move validation using flag registers",
+      "Robust win/draw detection algorithms",
+      "Manual game state re-initialization logic"
+    ],
+    "stack": {
+      "language": "x86 Assembly",
+      "framework": "EMU8086 / MS-DOS",
+      "tools": [
+        "EMU8086 Assembler",
+        "Debug Utils"
+      ],
+      "database": "Memory Data Segment"
+    },
+    "screenshots": [],
+    "description": "A fundamental exploration of computer architecture and instruction-level logic. This Tic Tac Toe implementation is crafted in pure 16-bit x86 Assembly, communicating with the hardware via MS-DOS interrupts. It showcases the precise management of data segments, flag-based decision making for win conditions, and direct buffer manipulation for its ASCII rendering. The project serves as a bridge to the origins of software engineering, where every byte and cycle is manually accounted for."
   },
-  "screenshots": [
-    "https://raw.githubusercontent.com/Geovanni-Gonzalez/TicTacToe-x86-ASM/main/screenshots/1principalImage.jpg"
-  ],
-  "description": {
-    "es": "Juego del Gato (Tres en línea) implementado en ensamblador x86 para arquitectura de 16-bit, con detección de ganadores y validación de reglas a bajo nivel.",
-    "en": "Tic Tac Toe game implemented in x86 assembly for 16-bit architecture, featuring low-level winner detection and rule validation."
+  "es": {
+    "tech": [
+      "Ensamblador x86 (16-bit)",
+      "Instrucciones 8086",
+      "Manipulación de Registros",
+      "Interrupciones (INT 21h)"
+    ],
+    "features": [
+      "Modo competitivo multijugador local de 2 jugadores",
+      "Interfaz de consola optimizada con estilo ASCII",
+      "Validación de movimientos a bajo nivel usando registros de bandera",
+      "Algoritmos robustos de detección de victoria y empate",
+      "Lógica manual de reinicialización del estado de juego"
+    ],
+    "stack": {
+      "language": "Ensamblador x86",
+      "framework": "EMU8086 / MS-DOS",
+      "tools": [
+        "Ensamblador EMU8086",
+        "Utilidades de Depuración"
+      ],
+      "database": "Segmento de Datos en Memoria"
+    },
+    "screenshots": [],
+    "description": "Una exploración fundamental de la arquitectura de computadoras y lógica a nivel de instrucciones. Esta implementación está desarrollada en puro ensamblador x86 de 16 bits, comunicándose con el hardware mediante interrupciones de MS-DOS. Presenta una gestión precisa de segmentos de datos, toma de decisiones basada en flags para condiciones de victoria y manipulación directa de buffers para el renderizado ASCII. El proyecto sirve como puente hacia los orígenes de la ingeniería de software."
   }
 }
