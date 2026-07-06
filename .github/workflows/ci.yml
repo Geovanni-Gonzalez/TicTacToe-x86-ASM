@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    name: Validate repository documentation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check required public files
+        run: |
+          test -s README.md
+          test -s LICENSE
+          test -s project-info.json
+          test -s screenshots/principalImage.png

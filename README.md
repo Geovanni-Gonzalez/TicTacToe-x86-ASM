@@ -63,3 +63,4 @@ GitHub: [Geovanni-Gonzalez](https://github.com/Geovanni-Gonzalez)
 
 
 
+![CI](https://github.com/Geovanni-Gonzalez/TicTacToe-x86-ASM/actions/workflows/ci.yml/badge.svg)
