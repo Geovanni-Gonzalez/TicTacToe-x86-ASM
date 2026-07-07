@@ -1,54 +1,58 @@
 {
   "en": {
+    "status": "documentary-historical",
     "tech": [
       "x86 Assembly (16-bit)",
-      "8086 Instructions",
-      "Register Manipulation",
-      "Interrupts (INT 21h)"
+      "EMU8086 / MS-DOS",
+      "Console ASCII interface",
+      "DOS interrupts"
     ],
     "features": [
-      "Local 2-player competitive multiplayer mode",
-      "Optimized ASCII-styled console interface",
-      "Low-level move validation using flag registers",
-      "Robust win/draw detection algorithms",
-      "Manual game state re-initialization logic"
+      "Historical documentation for an academic Tic Tac Toe project",
+      "Available screenshot of the console interface",
+      "Repository-level metadata for portfolio classification",
+      "Documentary CI that validates public files"
     ],
     "stack": {
       "language": "x86 Assembly",
       "framework": "EMU8086 / MS-DOS",
       "tools": [
-        "EMU8086 Assembler",
-        "Debug Utils"
+        "EMU8086 Assembler"
       ],
-      "database": "Memory Data Segment"
+      "runtime": "DOS-like emulator",
+      "database": "None"
     },
-    "screenshots": [],
-    "description": "A fundamental exploration of computer architecture and instruction-level logic. This Tic Tac Toe implementation is crafted in pure 16-bit x86 Assembly, communicating with the hardware via MS-DOS interrupts. It showcases the precise management of data segments, flag-based decision making for win conditions, and direct buffer manipulation for its ASCII rendering. The project serves as a bridge to the origins of software engineering, where every byte and cycle is manually accounted for."
+    "screenshots": [
+      "screenshots/principalImage.png"
+    ],
+    "description": "Documentary repository for a historical academic Tic Tac Toe project in 16-bit x86 Assembly. The current repository preserves public documentation, metadata and a screenshot, but the original .asm source file is not present, so it is not presented as a reproducible build."
   },
   "es": {
+    "status": "documental-historico",
     "tech": [
       "Ensamblador x86 (16-bit)",
-      "Instrucciones 8086",
-      "Manipulación de Registros",
-      "Interrupciones (INT 21h)"
+      "EMU8086 / MS-DOS",
+      "Interfaz ASCII de consola",
+      "Interrupciones DOS"
     ],
     "features": [
-      "Modo competitivo multijugador local de 2 jugadores",
-      "Interfaz de consola optimizada con estilo ASCII",
-      "Validación de movimientos a bajo nivel usando registros de bandera",
-      "Algoritmos robustos de detección de victoria y empate",
-      "Lógica manual de reinicialización del estado de juego"
+      "Documentacion historica de un proyecto academico de Tic Tac Toe",
+      "Captura disponible de la interfaz de consola",
+      "Metadatos para clasificacion de portafolio",
+      "CI documental que valida archivos publicos"
     ],
     "stack": {
       "language": "Ensamblador x86",
       "framework": "EMU8086 / MS-DOS",
       "tools": [
-        "Ensamblador EMU8086",
-        "Utilidades de Depuración"
+        "Ensamblador EMU8086"
       ],
-      "database": "Segmento de Datos en Memoria"
+      "runtime": "Emulador tipo DOS",
+      "database": "Ninguna"
     },
-    "screenshots": [],
-    "description": "Una exploración fundamental de la arquitectura de computadoras y lógica a nivel de instrucciones. Esta implementación está desarrollada en puro ensamblador x86 de 16 bits, comunicándose con el hardware mediante interrupciones de MS-DOS. Presenta una gestión precisa de segmentos de datos, toma de decisiones basada en flags para condiciones de victoria y manipulación directa de buffers para el renderizado ASCII. El proyecto sirve como puente hacia los orígenes de la ingeniería de software."
+    "screenshots": [
+      "screenshots/principalImage.png"
+    ],
+    "description": "Repositorio documental de un proyecto academico historico de Tic Tac Toe en ensamblador x86 de 16 bits. La estructura actual conserva documentacion publica, metadatos y una captura, pero no incluye el archivo fuente .asm original, por lo que no se presenta como build reproducible."
   }
 }
