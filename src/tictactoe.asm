@@ -1,4 +1,25 @@
 
+; =============================================================================
+;  TIC TAC TOE (JUEGO DE GATO) - ENSAMBLADOR x86 DE 16 BITS
+; -----------------------------------------------------------------------------
+;  Proyecto academico: Fundamentos de Organizacion de Computadoras
+;  Autores:  Jimena Mendez Morales, Geovanni Gonzalez Aguilar
+;  Entorno:  EMU8086 / MS-DOS (modelo SMALL, interrupciones INT 10h e INT 21h)
+;
+;  Descripcion:
+;    Juego de tres en linea para dos jugadores por turnos en consola.
+;    El tablero se representa con 9 variables de un byte (C1..C9) que
+;    contienen el numero de celda ('1'..'9') o el marcador ('X'/'O').
+;    El programa valida entradas, detecta celdas ocupadas y verifica
+;    las 8 combinaciones ganadoras y el empate.
+;
+;  Ejecucion:
+;    - EMU8086: abrir este archivo y presionar "Emulate" -> "Run".
+;    - DOSBox + MASM/TASM: ver README.md para los comandos de ensamblado.
+;
+;  Documentacion tecnica: docs/ARCHITECTURE.md
+; =============================================================================
+
 .MODEL SMALL
 
 
@@ -273,10 +294,10 @@ INICIALIZAR:
             
            
         VERIFICAR3:  ; VERIFICAR 7, 8, 9
-            
-            MOV AL, C4
-            MOV BL, C5 
-            MOV CL, C6
+
+            MOV AL, C7
+            MOV BL, C8
+            MOV CL, C9
             
             CMP AL, BL
             JNZ VERIFICAR4
