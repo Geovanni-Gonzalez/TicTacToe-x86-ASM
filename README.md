@@ -1,71 +1,99 @@
-# TicTacToe x86 ASM
+# Tic-Tac-Toe in x86 Assembly
 
 [![CI](https://github.com/Geovanni-Gonzalez/TicTacToe-x86-ASM/actions/workflows/ci.yml/badge.svg)](https://github.com/Geovanni-Gonzalez/TicTacToe-x86-ASM/actions/workflows/ci.yml)
+![Language](https://img.shields.io/badge/language-x86%20Assembly%20(16--bit)-blue)
+![Platform](https://img.shields.io/badge/platform-MS--DOS%20%2F%20EMU8086-lightgrey)
 
-Repositorio documental de un proyecto academico de Tic Tac Toe en ensamblador x86 para entorno EMU8086/MS-DOS.
+**[Leer en español](docs/README.es.md)**
 
-## Estado actual
+A two-player Tic-Tac-Toe game written entirely in **16-bit x86 assembly** for MS-DOS. There are no libraries and no OS abstractions: screen rendering, cursor control, keyboard input and all game logic are implemented directly on top of BIOS (`INT 10h`) and DOS (`INT 21h`) interrupts.
 
-Este repositorio conserva la documentacion publica, metadatos y una captura del proyecto original. El archivo fuente `.asm` no esta presente en la estructura actual, por lo que el repositorio se mantiene como referencia historica/documental y no como build reproducible.
+Built as the second project for *Fundamentals of Computer Organization* (Computer Engineering).
 
-## Objetivo del proyecto
+![Main screen](docs/img/principalImage.png)
 
-Practicar fundamentos de programacion de bajo nivel mediante un juego simple por turnos:
+## Features
 
-- Representacion de tablero en consola.
-- Flujo de control en ensamblador.
-- Entrada/salida de texto en ambiente DOS/EMU8086.
-- Validacion de turnos, victoria y empate.
+- **Interactive console UI** — welcome screen, ASCII board rendered with precise cursor positioning, and per-turn prompts.
+- **Complete game engine** — turn alternation between players X and O, win detection across all 8 winning lines (3 rows, 3 columns, 2 diagonals) and draw detection.
+- **Robust input handling** — rejects keys outside `1-9` and cells that are already taken, with on-screen feedback and no lost turns.
+- **Clean termination** — end-of-game messages (winner or draw) and proper exit through DOS service `4Ch`.
 
-## Tecnologias documentadas
+## How it works
 
-- x86 Assembly 16-bit
-- EMU8086 / MS-DOS
-- Consola ASCII
-- Interrupciones DOS
+The board is stored as nine one-byte variables (`C1`–`C9`). Each byte holds either the ASCII digit of the cell (`'1'`–`'9'`) or a player marker (`'X'` / `'O'`). This single representation drives everything:
 
-## Captura
+- **Rendering** prints each byte as-is, so free cells show their number and taken cells show the marker.
+- **Occupancy check** is a comparison against `'X'`/`'O'`.
+- **Win detection** compares the three bytes of each line for equality — if a line is uniform it can only be three identical markers, since free cells hold distinct digits.
 
-![Captura principal](screenshots/principalImage.png)
+The full walkthrough of the data segment, control flow and design decisions is in [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 
-## Estructura
+## Running the game
+
+### Option A — EMU8086 (recommended)
+
+1. Install [EMU8086](https://emu8086-microprocessor-emulator.en.softonic.com/).
+2. Open `src/tictactoe.asm`.
+3. Press **Emulate**, then **Run**.
+
+### Option B — DOSBox + TASM/MASM
+
+```bat
+REM Turbo Assembler
+tasm tictactoe.asm
+tlink tictactoe.obj
+tictactoe.exe
+
+REM or Microsoft Macro Assembler
+masm tictactoe.asm;
+link tictactoe.obj;
+tictactoe.exe
+```
+
+### Playing
+
+Players take turns typing a cell number (`1`–`9`). Player 1 places `X`, player 2 places `O`. The game announces the winner or a draw and exits.
+
+```txt
+   |   |
+ 1 | 2 | 3
+---+---+---
+   |   |
+ 4 | X | 6
+---+---+---
+   |   |
+ 7 | 8 | O
+   |   |
+```
+
+## Project structure
 
 ```txt
 TicTacToe-x86-ASM/
-  .github/workflows/ci.yml   Validacion documental del repositorio
-  screenshots/               Capturas disponibles del proyecto
-  LICENSE                    Licencia del repositorio
-  project-info.json          Metadatos bilingues del proyecto
-  README.md                  Documentacion principal
+├── src/
+│   └── tictactoe.asm        Full game source (16-bit x86, MASM syntax)
+├── docs/
+│   ├── ARCHITECTURE.md      Technical documentation (English)
+│   ├── ARCHITECTURE.es.md   Technical documentation (Spanish)
+│   └── assignment.es.md     Original course assignment (Spanish)
+├── docs/img/                Screenshots of the running game
+├── .github/workflows/       CI: repository and source validation
+├── project-info.json        Bilingual project metadata
+└── README.md / README.es.md
 ```
 
-## CI
+## Development notes
 
-El workflow actual valida que los archivos publicos esenciales existan:
+While preparing this repository for publication, a copy-paste bug in the original submission was found and fixed: the bottom-row win check (`VERIFICAR3`) compared cells 4-5-6 instead of 7-8-9, so a win on the bottom row was never detected. See commit history for details.
 
-- `README.md`
-- `LICENSE`
-- `project-info.json`
-- `screenshots/principalImage.png`
+## Authors
 
-No ejecuta ensamblado ni emulacion porque no hay fuente ASM versionada.
+Academic project developed in pair:
 
-## Como convertirlo en repositorio reproducible
+- **Geovanni Gonzalez Aguilar** — [@Geovanni-Gonzalez](https://github.com/Geovanni-Gonzalez)
+- **Jimena Mendez Morales**
 
-Para cerrar completamente la deuda tecnica, se debe agregar:
+## License
 
-1. Codigo fuente, por ejemplo `src/tictactoe.asm`.
-2. Ensamblador objetivo documentado: EMU8086, NASM, MASM/TASM u otro.
-3. Comandos de ensamblado y ejecucion.
-4. Un ejemplo de partida o salida de consola.
-5. CI que valide sintaxis o, como minimo, presencia de fuente y documentacion de ejecucion.
-
-## Estado de portafolio
-
-Proyecto academico/historico. Se conserva para mostrar interes en programacion de bajo nivel, pero no debe presentarse como proyecto ejecutable hasta recuperar o reescribir el fuente ASM.
-
-## Autor
-
-Geovanni Gonzalez  
-Estudiante de Ingenieria en Computacion  
-GitHub: [Geovanni-Gonzalez](https://github.com/Geovanni-Gonzalez)
+All rights reserved — see [LICENSE](LICENSE). The code is published for portfolio and reference purposes.
